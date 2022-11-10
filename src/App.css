@@ -1,0 +1,88 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.App {
+  height: 100vh;
+  padding: 1vh;
+  background-color: rgb(77, 77, 77);
+  color: rgb(119, 248, 255);
+}
+
+.header {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+}
+
+#header-title {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.taskform-button {
+  padding: 1em 2em;
+  margin: 1em;
+  border: none;
+  border-radius: 1vh;
+  background-color: rgb(77, 77, 77);
+  color:rgb(119, 248, 255);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.taskform-button:hover {
+  background-color: gray;
+}
+
+#tasks-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+
+}
+
+.task-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 2vh;
+  padding: 1em;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.button-div {
+  display: flex;
+  gap: .5rem
+}
+
+.checked {
+  background: rgb(0, 110, 174);
+}
+
+.unchecked {
+  background: rgb(44, 53, 63);
+}
+
+form {
+  display: flex;
+  gap: 1em;
+}
+
+.form-div {
+  display: flex;
+  padding-bottom: 1em;
+  justify-content: center;
+}
+
+.input-div {
+  font-size: 2em;
+  display: flex;
+  gap: .5em;
+}
