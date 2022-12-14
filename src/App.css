@@ -8,7 +8,7 @@ html, body, #root {
   height: 100vh;
   padding: 1vh;
   background-color: rgb(77, 77, 77);
-  color: rgb(119, 248, 255);
+  color: white;
 }
 
 .header {
@@ -24,14 +24,18 @@ html, body, #root {
 }
 
 .taskform-button {
-  padding: 1em 2em;
-  margin: 1em;
   border: none;
   border-radius: 1vh;
   background-color: rgb(77, 77, 77);
-  color:rgb(119, 248, 255);
+  color: white;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.checkbox {
+  width: 1em;
+  height: 1em;
+  border: 1px solid black;
 }
 
 .taskform-button:hover {
@@ -45,16 +49,36 @@ html, body, #root {
 
 }
 
+.close-form-button {
+  border: 1px solid black;
+  background-color: red;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-form-button:hover {
+  background-color: rgb(130, 0, 0);
+}
+
 .task-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 2vh;
-  padding: 1em;
+  border-top: 1px solid black;
   font-size: 1.5rem;
   font-weight: bold;
+  padding-left: 1em;
+}
+
+.left-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
 }
 
 .button-div {
@@ -63,11 +87,11 @@ html, body, #root {
 }
 
 .checked {
-  background: rgb(0, 110, 174);
+  background-color: green;
 }
 
 .unchecked {
-  background: rgb(44, 53, 63);
+  background-color: black;
 }
 
 form {
@@ -77,12 +101,24 @@ form {
 
 .form-div {
   display: flex;
+  flex: row;
   padding-bottom: 1em;
-  justify-content: center;
+  justify-content: right;
+  align-items: center;
 }
 
 .input-div {
-  font-size: 2em;
-  display: flex;
+  font-size: 1.5em;
   gap: .5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

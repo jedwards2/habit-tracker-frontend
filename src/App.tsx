@@ -36,6 +36,7 @@ function App() {
       setTasksArray(final)
 
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const deleteTask = (id: String) => {
@@ -115,11 +116,14 @@ function App() {
   }
 
   let all_tasks = tasksArray.map((task) => {
-    return (<div key={task.id} className={`task-row ${checkDayAndYear(task.updated_last, new Date()) ? "checked" : "unchecked"}`}>
-      <p>{String(calculateStreak(task))} Day Streak</p>
-      <p>{task.content}</p>
+    return (
+    <div key={task.id} className={`task-row`}>
+      <div className="left-div">
+        {checkDayAndYear(task.updated_last, new Date()) ? <div className={`checkbox checked`}></div> : <div className={`checkbox unchecked`} onClick={() => checkTask(task.id)}></div>}
+        <p>{String(calculateStreak(task))} Day Streak</p>
+        <p>{task.content}</p>
+      </div>
       <div className="button-div">
-       {!checkDayAndYear(task.updated_last, new Date()) && <button className="taskform-button" type="button" onClick={() => checkTask(task.id) }>Completed Today</button>}
         <button className="taskform-button" type="button" onClick={() => deleteTask(task.id)}>Delete</button>
       </div>
     </div>)
@@ -131,7 +135,7 @@ function App() {
         <h1 id="header-title">Habit Tracker</h1>
         <button type="button" className="taskform-button" onClick={() => setTasksFormOpen(!tasksFormOpen)}>Add Task</button>
       </div>
-      {tasksFormOpen && <TaskForm addTask={addTask} />}
+      {tasksFormOpen && <TaskForm setTasksFormOpen={setTasksFormOpen} addTask={addTask} />}
       <div id="tasks-div">
         {all_tasks}
       </div>
